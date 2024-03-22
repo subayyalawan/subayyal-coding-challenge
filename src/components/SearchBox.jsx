@@ -16,13 +16,13 @@ const SearchBox = ({ searchQuery, setSearchQuery, handleGenderFilter }) => {
       <div className="w-1/3 flex justify-between">
         <input
           type="text"
-          className="outline-none w-full px-2 py-3 border-2 border-cyan-500/30 rounded-2xl mr-1 bg-cyan-50 focus:bg-white transition-all duration-200 font-roboto text-center"
+          className="outline-none w-full px-2 py-3 border-2 border-cyan-500/20 rounded-2xl mr-1 bg-cyan-50 focus:bg-white transition-all duration-200 font-roboto text-center"
           placeholder="Type Here to Search"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
         />
       </div>
-      <div className="mt-4 flex justify-between items-center w-3/12">
+      <div className="mt-4 flex justify-between items-center w-1/4">
         <FontAwesomeIcon
           icon={faSliders}
           className={`${

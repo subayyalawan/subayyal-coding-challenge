@@ -46,9 +46,9 @@ const User = () => {
         <div className="bg-white rounded-2xl w-8/12 mx-auto relative -mt-48 p-8 flex items-start justify-between shadow-lg">
           <button
             onClick={() => navigate("/")}
-            className="text-cyan-500 text-lg flex items-center font-semibold"
+            className="text-cyan-500 text-xl font-semibold p-1"
           >
-            <FontAwesomeIcon icon={faAngleLeft} className="mr-2" />
+            <FontAwesomeIcon icon={faAngleLeft} className="mr-2 font-bold text-xl" />
             Home
           </button>
 
