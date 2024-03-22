@@ -2,7 +2,7 @@ import React from "react";
 import { GoogleMap, useJsApiLoader, MarkerF } from "@react-google-maps/api";
 
 const Map = ({ lat, lng }) => {
-  const APIKey = import.meta.env.VITE_REACT_APP_GOOGLE_MAPS_API_KEY;
+  const APIKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
 
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: APIKey,

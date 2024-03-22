@@ -21,10 +21,11 @@ const App = () => {
   const [genderFilter, setGenderFilter] = useState("all");
   const [errMsg, setErrMsg] = useState("Please Wait ...")
 
+  console.log(import.meta.env);
   const RandomUserFetch = async () => {
     try {
       // const baseURL = process.env.REACT_APP_RANDOM_USERS_BASE_URL // for CRA
-      const baseURL = import.meta.env.VITE_REACT_APP_RANDOM_USERS_BASE_URL; // for Vite
+      const baseURL = import.meta.env.VITE_RANDOM_USERS_BASE_URL; // for Vite
       await axios
         .get(
           `${baseURL}?results=9&page=${pageNo}&seed=abcd&exc=registered,login,cell&nat=au,br,ca,rs,us`
