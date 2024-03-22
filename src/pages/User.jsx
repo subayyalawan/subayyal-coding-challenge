@@ -40,10 +40,10 @@ const User = () => {
           <img
             src={profile_bg}
             alt="Profile background"
-            className="w-full h-[45vh] object-cover"
+            className="w-full h-[55vh] object-cover"
           />
         </div>
-        <div className="bg-white rounded-2xl w-8/12 mx-auto relative -mt-60 p-8 flex items-start justify-between shadow-lg">
+        <div className="bg-white rounded-2xl w-8/12 mx-auto relative -mt-48 p-8 flex items-start justify-between shadow-lg">
           <button
             onClick={() => navigate("/")}
             className="text-cyan-500 text-lg flex items-center font-semibold"
