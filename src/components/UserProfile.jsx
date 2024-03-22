@@ -13,8 +13,8 @@ const UserProfile = ({ selectedUser }) => {
   const [currentHover, setCurrentHover] = useState("email");
 
   return (
-    <div className="flex justify-center flex-col items-center w-2/4">
-      <div className="rounded-full overflow-hidden -mt-[18%] w-[30%] border-8 border-white shadow-md">
+    <div className="flex justify-center flex-col items-center w-3/4">
+      <div className="rounded-full overflow-hidden -mt-[15%] w-[25%] border-8 border-white shadow-md">
         <img src={selectedUser.picture.large} alt="" className="w-full" />
       </div>
       <div className="font-roboto font-bold text-4xl text-gray-900 my-7">
@@ -25,7 +25,7 @@ const UserProfile = ({ selectedUser }) => {
 
       
 
-      <div className="flex justify-between items-center w-5/6 mt-4">
+      <div className="flex justify-between items-center w-4/6 mt-4">
         <UserProfileIcon
           currentHover={currentHover}
           setCurrentHover={setCurrentHover}
