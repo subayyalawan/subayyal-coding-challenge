@@ -21,7 +21,6 @@ const App = () => {
   const [genderFilter, setGenderFilter] = useState("all");
   const [errMsg, setErrMsg] = useState("Please Wait ...")
 
-  console.log(import.meta.env);
   const RandomUserFetch = async () => {
     try {
       // const baseURL = process.env.REACT_APP_RANDOM_USERS_BASE_URL // for CRA

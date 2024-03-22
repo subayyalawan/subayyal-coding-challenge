@@ -8,7 +8,7 @@ const Pagination = () => {
 
   return (
     <>
-      <div className="container mx-auto flex justify-center items-center mt-20 mb-10">
+      <div className="container mx-auto flex justify-center items-center mt-20 py-5">
         <button
           onClick={() => handlePageChange(pageNo - 1)}
           className="cursor-pointer text-cyan-500 disabled:text-cyan-500/30 disabled:cursor-default"

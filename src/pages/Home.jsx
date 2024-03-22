@@ -50,7 +50,7 @@ const Home = () => {
         setSearchQuery={setSearchQuery}
         handleGenderFilter={handleGenderFilter}
       />
-      <div className="container mx-auto my-10 min-h-[58vh]">
+      <div className="container mx-auto my-10 min-h-[58vh] px-6">
         {users.length === 0 ? (
           <div className="flex justify-center items-center text-center mt-20">
             <h2 className="font-roboto text-3xl uppercase text-gray-700">

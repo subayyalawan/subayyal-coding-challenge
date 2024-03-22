@@ -1,25 +1,27 @@
 import React, { useEffect, useLayoutEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useRandomUser } from "../context/RandomUserContext";
 import Map from "../components/Map";
+import profile_bg from "../assets/profile-bg.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
+import UserProfile from "../components/UserProfile";
+import UserprofileErr from "../components/UserprofileErr";
 
 const User = () => {
   const { userId } = useParams();
   const { randomUser } = useRandomUser();
-  const [selectedUser, setSelectedUser] = useState(
-    randomUser.filter((user) => user.id.value === userId)
-  );
-
-  const coordinates = {
-    lat: selectedUser[0]?.location.coordinates.latitude,
-    lng: selectedUser[0]?.location.coordinates.longitude,
-  };
+  const navigate = useNavigate();
+  const [selectedUser, setSelectedUser] = useState([]);
 
   const handleSelectedUser = () => {
     const filteredUser = randomUser.filter((user) => {
       return user.id.value === userId;
     });
-    setSelectedUser(filteredUser);
+
+    if (filteredUser.length > 0) {
+      setSelectedUser(filteredUser);
+    } else [setSelectedUser([])];
   };
 
   useLayoutEffect(() => {
@@ -31,33 +33,48 @@ const User = () => {
       (document.title = `Sample User - ${selectedUser[0].name.first}`);
   }, [selectedUser]);
 
-  // console.log(selectedUser[0]?.location.coordinates);
-  // console.log(coordinates);
-
-  if (selectedUser.length === 0) {
-    return (
-      <div>
-        <h2>there is nothing to show</h2>
-        <h2>Please Select a user from the Home Page</h2>
-        <Link to={"/"}>go back to home</Link>
-      </div>
-    );
-  } else {
-    return (
-      <>
-        <div>
-          {selectedUser[0]?.email}
-          {/* 33.99911076012358, 72.94826281768678 */}
-          <div className="container mx-auto h-[80vh]">
-            <Map lat={selectedUser[0]?.location.coordinates.latitude} lng={selectedUser[0]?.location.coordinates.longitude}/>
-            {/* <Map /> */}
-          </div>
-          {/* <Map Location={selectedUser[0]?.location.coordinates} /> */}
+  return (
+    <>
+      <div className="min-h-[88vh]">
+        <div className="img">
+          <img
+            src={profile_bg}
+            alt="Profile background"
+            className="w-full h-[45vh] object-cover"
+          />
         </div>
-        <Link to={"/"}>go back to home</Link>
-      </>
-    );
-  }
+        <div className="bg-white rounded-2xl w-8/12 mx-auto relative -mt-60 p-8 flex items-start justify-between shadow-lg">
+          <button
+            onClick={() => navigate("/")}
+            className="text-cyan-500 text-lg flex items-center font-semibold"
+          >
+            <FontAwesomeIcon icon={faAngleLeft} className="mr-2" />
+            Home
+          </button>
+
+          {selectedUser.length === 0 ? (
+            <div className="text-center my-28">
+              <UserprofileErr />
+            </div>
+          ) : (
+            <>
+              <UserProfile selectedUser={selectedUser[0]} />
+            </>
+          )}
+
+          <div className="w-8"></div>
+        </div>
+
+        <h2 className="mt-28 text-center container mx-auto font-roboto text-3xl capitalize text-gray-700">View My Address on Map Below</h2>
+        <div className="w-8/12 mx-auto h-[50vh] rounded-2xl overflow-hidden shadow-lg mt-8 mb-12">
+          <Map
+            lat={selectedUser[0]?.location.coordinates.latitude}
+            lng={selectedUser[0]?.location.coordinates.longitude}
+          />
+        </div>
+      </div>
+    </>
+  );
 };
 
 export default User;
