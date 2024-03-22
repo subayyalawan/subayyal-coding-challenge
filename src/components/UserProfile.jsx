@@ -10,7 +10,7 @@ import UserProfileIcon from "./UserProfileIcon";
 import UserProfileIconDisplay from "./UserProfileIconDisplay";
 
 const UserProfile = ({ selectedUser }) => {
-  const [currentHover, setCurrentHover] = useState("phone");
+  const [currentHover, setCurrentHover] = useState("email");
 
   return (
     <div className="flex justify-center flex-col items-center w-2/4">

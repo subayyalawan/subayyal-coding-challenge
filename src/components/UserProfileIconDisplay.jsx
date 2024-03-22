@@ -13,14 +13,14 @@ const UserProfileIconDisplay = ({ currentHover, selectedUser }) => {
 
         {currentHover === "dob" && (
           <>
-            My Date Of Birth is <br />
+            I Was born on <br />
             <span className="text-cyan-500 font-light text-3xl mt-2 block">{selectedUser.dob.date.slice(8, 10)}/{selectedUser.dob.date.slice(5, 7)}/{selectedUser.dob.date.slice(0, 4)}</span>
           </>
         )}
 
         {currentHover === "address" && (
           <>
-            My Address is <br />
+            I live at <br />
             <span className="text-cyan-500 font-light text-3xl mt-2 block">
               {selectedUser.location.street.number}, {selectedUser.location.street.name}, {selectedUser.location.city}
             </span>
@@ -28,7 +28,7 @@ const UserProfileIconDisplay = ({ currentHover, selectedUser }) => {
         )}
         {currentHover === "phone" && (
           <>
-            My Contact Number is <br />
+            You can contact me at <br />
             <span className="text-cyan-500 font-light text-3xl mt-2 block">{selectedUser.phone}</span>
           </>
         )}
