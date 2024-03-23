@@ -40,37 +40,46 @@ const User = () => {
           <img
             src={profile_bg}
             alt="Profile background"
-            className="w-full h-[55vh] object-cover"
+            className="w-full lg:h-[50vh] sm:h-[40vh] h-[280px] object-cover"
           />
         </div>
-        <div className="bg-white rounded-2xl w-8/12 mx-auto relative -mt-48 p-8 flex items-start justify-between shadow-lg">
-          <button
-            onClick={() => navigate("/")}
-            className="text-cyan-500 text-xl font-semibold p-1"
-          >
-            <FontAwesomeIcon icon={faAngleLeft} className="mr-2 font-bold text-xl" />
-            Home
-          </button>
+        <div className="sm:mx-6 mx-4">
+          <div className="bg-white rounded-2xl xl:w-8/12 container mx-auto relative -mt-48 md:p-8 sm:p-6 p-4 flex items-start justify-between shadow-lg">
+            <button
+              onClick={() => navigate("/")}
+              className="text-cyan-500 sm:text-xl text-base font-semibold px-1"
+            >
+              <FontAwesomeIcon
+                icon={faAngleLeft}
+                className="sm:mr-2 mr-0 font-bold text-xl"
+              />
+              <span className="sm:inline-block hidden">
+              Home
+              </span>
+            </button>
 
-          {selectedUser.length === 0 ? (
-            <div className="text-center my-28">
-              <UserprofileErr />
-            </div>
-          ) : (
-            <>
-              <UserProfile selectedUser={selectedUser[0]} />
-            </>
-          )}
+            {selectedUser.length === 0 ? (
+              <div className="text-center my-28">
+                <UserprofileErr />
+              </div>
+            ) : (
+              <>
+                <UserProfile selectedUser={selectedUser[0]} />
+              </>
+            )}
 
-          <div className="w-8"></div>
-        </div>
+            <div className="md:w-[70px] sm:w-[55px] w-[20px]"></div>
+          </div>
 
-        <h2 className="mt-28 text-center container mx-auto font-roboto text-3xl capitalize text-gray-700">View My Address on Map Below</h2>
-        <div className="w-8/12 mx-auto h-[50vh] rounded-2xl overflow-hidden shadow-lg mt-8 mb-12">
-          <Map
-            lat={selectedUser[0]?.location.coordinates.latitude}
-            lng={selectedUser[0]?.location.coordinates.longitude}
-          />
+          <h2 className="mt-28 text-center container mx-auto font-roboto text-3xl capitalize text-gray-700">
+            View My Address on Map Below
+          </h2>
+          <div className="xl:w-8/12 container mx-auto lg:h-[50vh] sm:h-[40vh] h-[280px] rounded-2xl overflow-hidden shadow-lg mt-8 mb-12">
+            <Map
+              lat={selectedUser[0]?.location.coordinates.latitude}
+              lng={selectedUser[0]?.location.coordinates.longitude}
+            />
+          </div>
         </div>
       </div>
     </>
