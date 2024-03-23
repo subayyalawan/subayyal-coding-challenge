@@ -8,7 +8,7 @@ const Pagination = () => {
 
   return (
     <>
-      <div className="container mx-auto flex justify-center items-center mt-20 py-5">
+      <div className="container mx-auto flex justify-center items-center mt-20 sm:py-5 py-3">
         <button
           onClick={() => handlePageChange(pageNo - 1)}
           className="cursor-pointer text-cyan-500 disabled:text-cyan-500/30 disabled:cursor-default"
@@ -28,7 +28,7 @@ const Pagination = () => {
                 pageNo === ele
                   ? "bg-cyan-500 text-white"
                   : "bg-transparent text-cyan-500 hover:bg-cyan-100"
-              } transition-all duration-150 border-2 border-cyan-500 px-3 py-1 rounded-full mx-2 font-bold font-roboto`}
+              } transition-all duration-150 border-2 border-cyan-500 px-3 py-1 rounded-full sm:mx-2 mx-1 font-bold font-roboto`}
               onClick={() => handlePageChange(ele)}
             >
               {ele}

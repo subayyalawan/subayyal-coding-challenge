@@ -50,7 +50,7 @@ const Home = () => {
         setSearchQuery={setSearchQuery}
         handleGenderFilter={handleGenderFilter}
       />
-      <div className="container mx-auto my-10 min-h-[58vh] px-6">
+      <div className="container mx-auto my-10 min-h-[58vh] sm:px-6 px-4">
         {users.length === 0 ? (
           <div className="flex justify-center items-center text-center mt-20">
             <h2 className="font-roboto text-3xl uppercase text-gray-700">
@@ -58,7 +58,7 @@ const Home = () => {
             </h2>
           </div>
         ) : (
-          <div className="grid grid-cols-3 gap-16">
+          <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-10 xl:gap-16">
             {users.map((data) => {
               return <UserCard key={data.id.value} data={data} />;
             })}

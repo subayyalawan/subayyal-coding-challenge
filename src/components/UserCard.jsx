@@ -30,7 +30,7 @@ const UserCard = ({ data }) => {
         <img src={data.picture.large} alt="User Img" className="w-full" />
       </div>
       <h2 className="font-roboto font-semibold text-xl mb-1">Hello! I'm</h2>
-      <h2 className="font-roboto font-bold text-3xl text-cyan-500 mb-2">
+      <h2 className="font-roboto font-bold xl:text-3xl sm:text-2xl text-3xl text-cyan-500 mb-2">
         {data.name.first} {data.name.last}
       </h2>
       <p className="text-gray-900/70 mb-1 font-roboto">{data.email}</p>
