@@ -60,11 +60,17 @@ Fonts that I used in the website are
 - [Iceberg](https://fonts.google.com/specimen/Iceberg)
 - [Roboto](https://fonts.google.com/specimen/Roboto)
 
+## Bonus
+
+- I have added nationality with each user on the Home page, and the User Profile page.
+- Added Google Maps Location of each user on the User Profile page
+
 ## Authors
 
 - Design and Developer by [@subayyalawan](https://github.com/subayyalawan)
 - My social linkedin [subayyalawan](https://www.linkedin.com/in/subayyalayub)
 
 
-## 
+## Known Bug
 
+I used a free API key for the google maps api so there is an issue with displaying map. It shows warning message "This page can't load Google Maps correctly." Just click Okay button and It will display the map correctly. The google map api is a paid service thats why I used a free key, If You use a Paid key, It will not show any warnings.
