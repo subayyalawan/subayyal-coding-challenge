@@ -71,7 +71,7 @@ const User = () => {
             <div className="md:w-[70px] sm:w-[55px] w-[20px]"></div>
           </div>
 
-          <h2 className="mt-28 text-center container mx-auto font-roboto text-3xl capitalize text-gray-700">
+          <h2 className="mt-28 text-center container mx-auto font-roboto md:text-3xl sm:text-2xl text-xl capitalize text-gray-700">
             View My Address on Map Below
           </h2>
           <div className="xl:w-8/12 container mx-auto lg:h-[50vh] sm:h-[40vh] h-[280px] rounded-2xl overflow-hidden shadow-lg mt-8 mb-12">
